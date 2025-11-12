@@ -1,0 +1,1658 @@
+{
+    "STRAT-P1-C1": {
+        "dimension": "Stratégie",
+        "palier": 1,
+        "criterion_text": "Conscience de l’importance stratégique du digital pour l’avenir de l’entreprise.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucun intérêt ou sujet jamais évoqué"
+            },
+            {
+                "score": 1,
+                "text": "Sujet évoqué ponctuellement sans action"
+            },
+            {
+                "score": 2,
+                "text": "Sujet reconnu comme levier possible"
+            },
+            {
+                "score": 3,
+                "text": "Sujet intégré aux préoccupations stratégiques"
+            }
+        ]
+    },
+    "STRAT-P1-C2": {
+        "dimension": "Stratégie",
+        "palier": 1,
+        "criterion_text": "Réflexion sur l’impact potentiel du digital sur l’activité ou le modèle de l’entreprise.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucune réflexion identifiée"
+            },
+            {
+                "score": 1,
+                "text": "Idées générales ou informelles"
+            },
+            {
+                "score": 2,
+                "text": "Début d’analyse de scénarios ou d’impacts"
+            },
+            {
+                "score": 3,
+                "text": "Réflexion structurée engagée avec premières hypothèses"
+            }
+        ]
+    },
+    "STRAT-P1-C3": {
+        "dimension": "Stratégie",
+        "palier": 1,
+        "criterion_text": "Ouverture de la direction au changement numérique.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Refus explicite ou résistance visible"
+            },
+            {
+                "score": 1,
+                "text": "Posture ouverte mais non mobilisante"
+            },
+            {
+                "score": 2,
+                "text": "Intention affirmée avec quelques signaux d’implication"
+            },
+            {
+                "score": 3,
+                "text": "Engagement visible et encourageant"
+            }
+        ]
+    },
+    "STRAT-P2-C1": {
+        "dimension": "Stratégie",
+        "palier": 2,
+        "criterion_text": "Identification d’un besoin métier pouvant être amélioré grâce au digital.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucune formalisation concrète malgré la conscience des enjeux"
+            },
+            {
+                "score": 1,
+                "text": "Besoin exprimé sans analyse approfondie"
+            },
+            {
+                "score": 2,
+                "text": "Besoin défini avec début d’exploration"
+            },
+            {
+                "score": 3,
+                "text": "Besoin clair, priorisé et motivé par la direction"
+            }
+        ]
+    },
+    "STRAT-P2-C2": {
+        "dimension": "Stratégie",
+        "palier": 2,
+        "criterion_text": "Expérimentation concrète de solutions digitales.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucun test engagé malgré l’intention"
+            },
+            {
+                "score": 1,
+                "text": "Un test isolé, sans évaluation"
+            },
+            {
+                "score": 2,
+                "text": "Plusieurs tests menés sans cadre structuré"
+            },
+            {
+                "score": 3,
+                "text": "Expérimentations documentées et utilisées pour apprendre"
+            }
+        ]
+    },
+    "STRAT-P2-C3": {
+        "dimension": "Stratégie",
+        "palier": 2,
+        "criterion_text": "Allocation de ressources (temps, budget, énergie) à des projets digitaux.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucune ressource dédiée bien que le sujet soit identifié"
+            },
+            {
+                "score": 1,
+                "text": "Mobilisation ponctuelle, sans pilotage"
+            },
+            {
+                "score": 2,
+                "text": "Affectation partielle de ressources (temps, personnes ou budget)"
+            },
+            {
+                "score": 3,
+                "text": "Ressources formalisées et disponibles pour les initiatives digitales"
+            }
+        ]
+    },
+    "STRAT-P3-C1": {
+        "dimension": "Stratégie",
+        "palier": 3,
+        "criterion_text": "Alignement des actions digitales avec les priorités stratégiques.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Actions digitales encore déconnectées malgré les expérimentations"
+            },
+            {
+                "score": 1,
+                "text": "Alignement partiel, non structuré"
+            },
+            {
+                "score": 2,
+                "text": "Alignement en cours sur plusieurs axes"
+            },
+            {
+                "score": 3,
+                "text": "Alignement explicite, assumé et piloté"
+            }
+        ]
+    },
+    "STRAT-P3-C2": {
+        "dimension": "Stratégie",
+        "palier": 3,
+        "criterion_text": "Ambition et couverture globale de la stratégie digitale.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Vision fragmentée, actions dispersées"
+            },
+            {
+                "score": 1,
+                "text": "Couverture très ciblée (1 ou 2 axes)"
+            },
+            {
+                "score": 2,
+                "text": "Ambition présente sur plusieurs volets stratégiques"
+            },
+            {
+                "score": 3,
+                "text": "Stratégie digitale transversale et cohérente"
+            }
+        ]
+    },
+    "STRAT-P3-C3": {
+        "dimension": "Stratégie",
+        "palier": 3,
+        "criterion_text": "Capacité à ajuster la stratégie digitale selon retours et évolution.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Réaction très lente ou absente malgré l’expérience"
+            },
+            {
+                "score": 1,
+                "text": "Ajustements réactifs et non suivis"
+            },
+            {
+                "score": 2,
+                "text": "Révisions ponctuelles à partir de retours informels"
+            },
+            {
+                "score": 3,
+                "text": "Processus d’amélioration continue outillé et suivi"
+            }
+        ]
+    },
+    "STRAT-P4-C1": {
+        "dimension": "Stratégie",
+        "palier": 4,
+        "criterion_text": "Intégration du digital au cœur de la stratégie globale.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Présence marginale malgré un alignement partiel"
+            },
+            {
+                "score": 1,
+                "text": "Présence symbolique mais non centrale"
+            },
+            {
+                "score": 2,
+                "text": "Présence stratégique affirmée sur plusieurs priorités"
+            },
+            {
+                "score": 3,
+                "text": "Digital moteur de la stratégie globale"
+            }
+        ]
+    },
+    "STRAT-P4-C2": {
+        "dimension": "Stratégie",
+        "palier": 4,
+        "criterion_text": "Capacité à innover ou se différencier grâce au digital.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucun levier de différenciation utilisé"
+            },
+            {
+                "score": 1,
+                "text": "Tests ou idées ponctuels d’innovation"
+            },
+            {
+                "score": 2,
+                "text": "Innovation régulière dans certains domaines"
+            },
+            {
+                "score": 3,
+                "text": "Innovation digitale structurée et alignée à la stratégie"
+            }
+        ]
+    },
+    "STRAT-P4-C3": {
+        "dimension": "Stratégie",
+        "palier": 4,
+        "criterion_text": "Pilotage par les données ou retours marché sur les actions digitales.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Suivi limité aux intentions initiales, sans indicateurs"
+            },
+            {
+                "score": 1,
+                "text": "Indicateurs suivis ponctuellement sans analyse"
+            },
+            {
+                "score": 2,
+                "text": "KPI partiels utilisés pour ajustement"
+            },
+            {
+                "score": 3,
+                "text": "Pilotage systématique basé sur données et feedback marché"
+            }
+        ]
+    },
+    "CULT-P1-C1": {
+        "dimension": "Culture & Humain",
+        "palier": 1,
+        "criterion_text": "Sensibilité à l’importance du digital pour l’activité.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucune conscience ou déni"
+            },
+            {
+                "score": 1,
+                "text": "Intérêt ponctuel ou passif"
+            },
+            {
+                "score": 2,
+                "text": "Reconnaissance générale dans l’équipe"
+            },
+            {
+                "score": 3,
+                "text": "Sensibilisation explicite partagée au sein de l’entreprise"
+            }
+        ]
+    },
+    "CULT-P1-C2": {
+        "dimension": "Culture & Humain",
+        "palier": 1,
+        "criterion_text": "Usages et équipements digitaux individuels (même personnels).",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucun usage digital identifiable"
+            },
+            {
+                "score": 1,
+                "text": "Usages personnels isolés et non liés au travail"
+            },
+            {
+                "score": 2,
+                "text": "Usages numériques personnels utilisés dans l’activité"
+            },
+            {
+                "score": 3,
+                "text": "Usages digitaux quotidiens (mail, WhatsApp, outils simples)"
+            }
+        ]
+    },
+    "CULT-P1-C3": {
+        "dimension": "Culture & Humain",
+        "palier": 1,
+        "criterion_text": "État d’esprit collectif et ouverture à l’apprentissage numérique.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Rejet collectif ou indifférence"
+            },
+            {
+                "score": 1,
+                "text": "Ouverture exprimée mais sans action"
+            },
+            {
+                "score": 2,
+                "text": "Motivation inégale mais émergente"
+            },
+            {
+                "score": 3,
+                "text": "Attitude curieuse et collective envers le digital"
+            }
+        ]
+    },
+    "CULT-P2-C1": {
+        "dimension": "Culture & Humain",
+        "palier": 2,
+        "criterion_text": "Identification d’usages digitaux à tester pour l’activité.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucune initiative identifiée malgré l’ouverture"
+            },
+            {
+                "score": 1,
+                "text": "Idées ou suggestions non concrétisées"
+            },
+            {
+                "score": 2,
+                "text": "Tests envisagés ou ponctuellement réalisés"
+            },
+            {
+                "score": 3,
+                "text": "Usages concrets testés en lien avec l’activité"
+            }
+        ]
+    },
+    "CULT-P2-C2": {
+        "dimension": "Culture & Humain",
+        "palier": 2,
+        "criterion_text": "Nouvelles méthodes numériques de travail (partage, outils simples, coordination à distance…).",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucun usage collaboratif"
+            },
+            {
+                "score": 1,
+                "text": "Initiatives individuelles"
+            },
+            {
+                "score": 2,
+                "text": "Méthodes partiellement partagées"
+            },
+            {
+                "score": 3,
+                "text": "Adoption croissante de nouveaux modes de travail"
+            }
+        ]
+    },
+    "CULT-P2-C3": {
+        "dimension": "Culture & Humain",
+        "palier": 2,
+        "criterion_text": "Apprentissage collectif et montée en compétences numériques.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucune démarche d’apprentissage"
+            },
+            {
+                "score": 1,
+                "text": "Formation isolée ou autodidacte"
+            },
+            {
+                "score": 2,
+                "text": "Échanges informels entre collègues"
+            },
+            {
+                "score": 3,
+                "text": "Apprentissage structuré ou collectif régulier"
+            }
+        ]
+    },
+    "CULT-P3-C1": {
+        "dimension": "Culture & Humain",
+        "palier": 3,
+        "criterion_text": "Usages digitaux réguliers et intégrés au quotidien.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Usages encore occasionnels ou subis"
+            },
+            {
+                "score": 1,
+                "text": "Usages installés mais non systématiques"
+            },
+            {
+                "score": 2,
+                "text": "Usages fréquents sur des tâches spécifiques"
+            },
+            {
+                "score": 3,
+                "text": "Usages numériques devenus réflexes dans le travail"
+            }
+        ]
+    },
+    "CULT-P3-C2": {
+        "dimension": "Culture & Humain",
+        "palier": 3,
+        "criterion_text": "Mode de travail collaboratif et engagement collectif.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Travail isolé ou cloisonné"
+            },
+            {
+                "score": 1,
+                "text": "Collaboration ponctuelle via le digital"
+            },
+            {
+                "score": 2,
+                "text": "Coordination numérique entre quelques personnes"
+            },
+            {
+                "score": 3,
+                "text": "Culture du travail collaboratif installée"
+            }
+        ]
+    },
+    "CULT-P3-C3": {
+        "dimension": "Culture & Humain",
+        "palier": 3,
+        "criterion_text": "Développement interne de compétences numériques spécifiques.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucune spécialisation numérique"
+            },
+            {
+                "score": 1,
+                "text": "Une personne ressource ou volontaire"
+            },
+            {
+                "score": 2,
+                "text": "Plusieurs personnes ont des compétences ciblées"
+            },
+            {
+                "score": 3,
+                "text": "L’équipe développe activement des expertises numériques internes"
+            }
+        ]
+    },
+    "CULT-P4-C1": {
+        "dimension": "Culture & Humain",
+        "palier": 4,
+        "criterion_text": "Digital comme moteur de progrès et d’innovation.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Le digital reste perçu comme un outil secondaire"
+            },
+            {
+                "score": 1,
+                "text": "Quelques idées d’amélioration sont envisagées"
+            },
+            {
+                "score": 2,
+                "text": "Le digital est utilisé pour améliorer certains processus"
+            },
+            {
+                "score": 3,
+                "text": "Le digital est intégré aux dynamiques d’innovation ou de différenciation"
+            }
+        ]
+    },
+    "CULT-P4-C2": {
+        "dimension": "Culture & Humain",
+        "palier": 4,
+        "criterion_text": "Agilité et adaptabilité des pratiques face aux besoins.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Réactions lentes ou figées"
+            },
+            {
+                "score": 1,
+                "text": "Adaptations improvisées"
+            },
+            {
+                "score": 2,
+                "text": "Capacité de réaction en équipe"
+            },
+            {
+                "score": 3,
+                "text": "Réactivité collective face aux changements, pilotée par des outils"
+            }
+        ]
+    },
+    "CULT-P4-C3": {
+        "dimension": "Culture & Humain",
+        "palier": 4,
+        "criterion_text": "Culture d’auto-apprentissage et d’amélioration continue.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucun réflexe d’apprentissage ou d’amélioration"
+            },
+            {
+                "score": 1,
+                "text": "Recherche personnelle d’information"
+            },
+            {
+                "score": 2,
+                "text": "Partage d’astuces ou bonnes pratiques"
+            },
+            {
+                "score": 3,
+                "text": "Amélioration continue valorisée et encouragée en équipe"
+            }
+        ]
+    },
+    "REL-P1-C1": {
+        "dimension": "Relation Client",
+        "palier": 1,
+        "criterion_text": "Présence de l’entreprise sur Internet ou les réseaux sociaux.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucune présence en ligne"
+            },
+            {
+                "score": 1,
+                "text": "Profil créé mais non animé"
+            },
+            {
+                "score": 2,
+                "text": "Présence visible avec quelques contenus"
+            },
+            {
+                "score": 3,
+                "text": "Présence active et à jour"
+            }
+        ]
+    },
+    "REL-P1-C2": {
+        "dimension": "Relation Client",
+        "palier": 1,
+        "criterion_text": "Interactions numériques (même simples) avec les clients (ex. : messages, appels via apps).",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucun canal numérique utilisé"
+            },
+            {
+                "score": 1,
+                "text": "Interactions très ponctuelles"
+            },
+            {
+                "score": 2,
+                "text": "Usages numériques occasionnels"
+            },
+            {
+                "score": 3,
+                "text": "Usage régulier d’un canal de communication numérique"
+            }
+        ]
+    },
+    "REL-P1-C3": {
+        "dimension": "Relation Client",
+        "palier": 1,
+        "criterion_text": "Visibilité et cohérence de l’information partagée en ligne (horaires, services, contacts…).",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucune information disponible"
+            },
+            {
+                "score": 1,
+                "text": "Informations incomplètes ou non cohérentes"
+            },
+            {
+                "score": 2,
+                "text": "Informations globalement claires"
+            },
+            {
+                "score": 3,
+                "text": "Informations complètes, à jour et homogènes sur tous les canaux"
+            }
+        ]
+    },
+    "REL-P2-C1": {
+        "dimension": "Relation Client",
+        "palier": 2,
+        "criterion_text": "Activation de canaux ou leviers digitaux pour entretenir la relation client.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucun levier activé"
+            },
+            {
+                "score": 1,
+                "text": "Utilisation très ponctuelle"
+            },
+            {
+                "score": 2,
+                "text": "Canaux activés sur certaines typologies clients"
+            },
+            {
+                "score": 3,
+                "text": "Canaux digitaux intégrés dans les pratiques commerciales"
+            }
+        ]
+    },
+    "REL-P2-C2": {
+        "dimension": "Relation Client",
+        "palier": 2,
+        "criterion_text": "Régularité et structuration des échanges numériques (mails, messages, posts, etc.).",
+        "options": [
+            {
+                "score": 0,
+                "text": "Échanges non suivis ou désorganisés"
+            },
+            {
+                "score": 1,
+                "text": "Réponses ponctuelles et réactives"
+            },
+            {
+                "score": 2,
+                "text": "Échanges suivis mais non planifiés"
+            },
+            {
+                "score": 3,
+                "text": "Échanges réguliers et pilotés"
+            }
+        ]
+    },
+    "REL-P2-C3": {
+        "dimension": "Relation Client",
+        "palier": 2,
+        "criterion_text": "Écoute et compréhension des besoins clients via le digital.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucun retour client collecté"
+            },
+            {
+                "score": 1,
+                "text": "Retours anecdotiques ou non exploités"
+            },
+            {
+                "score": 2,
+                "text": "Collecte informelle et partielle"
+            },
+            {
+                "score": 3,
+                "text": "Retours clients régulièrement recueillis et analysés"
+            }
+        ]
+    },
+    "REL-P3-C1": {
+        "dimension": "Relation Client",
+        "palier": 3,
+        "criterion_text": "Activation de plusieurs leviers digitaux pour différents objectifs clients.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Un seul canal utilisé"
+            },
+            {
+                "score": 1,
+                "text": "Diversification en cours"
+            },
+            {
+                "score": 2,
+                "text": "Plusieurs leviers activés selon l’étape du parcours"
+            },
+            {
+                "score": 3,
+                "text": "Orchestration cohérente des canaux digitaux"
+            }
+        ]
+    },
+    "REL-P3-C2": {
+        "dimension": "Relation Client",
+        "palier": 3,
+        "criterion_text": "Traçabilité des échanges et transactions clients.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucune trace des échanges"
+            },
+            {
+                "score": 1,
+                "text": "Historique gardé ponctuellement"
+            },
+            {
+                "score": 2,
+                "text": "Données enregistrées mais non centralisées"
+            },
+            {
+                "score": 3,
+                "text": "Données centralisées et consultables facilement"
+            }
+        ]
+    },
+    "REL-P3-C3": {
+        "dimension": "Relation Client",
+        "palier": 3,
+        "criterion_text": "Segmentation de profils clients et structuration de l’approche CRM.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucun tri ou catégorisation"
+            },
+            {
+                "score": 1,
+                "text": "Distinction basique de profils (ex. : anciens vs nouveaux)"
+            },
+            {
+                "score": 2,
+                "text": "Segmentation partielle utilisée"
+            },
+            {
+                "score": 3,
+                "text": "Segmentation active utilisée dans les actions client"
+            }
+        ]
+    },
+    "REL-P4-C1": {
+        "dimension": "Relation Client",
+        "palier": 4,
+        "criterion_text": "Parcours client digital fluide et intégré (de l’acquisition à la fidélisation).",
+        "options": [
+            {
+                "score": 0,
+                "text": "Expérience client fragmentée"
+            },
+            {
+                "score": 1,
+                "text": "Parcours partially digitalisé"
+            },
+            {
+                "score": 2,
+                "text": "Parcours cohérent sur certains segments"
+            },
+            {
+                "score": 3,
+                "text": "Parcours fluide conçu autour du digital"
+            }
+        ]
+    },
+    "REL-P4-C2": {
+        "dimension": "Relation Client",
+        "palier": 4,
+        "criterion_text": "Personnalisation des contenus, services ou offres selon le profil client.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucune différenciation"
+            },
+            {
+                "score": 1,
+                "text": "Personnalisation ponctuelle ou manuelle"
+            },
+            {
+                "score": 2,
+                "text": "Personnalisation sur certains leviers (newsletter, promo…)"
+            },
+            {
+                "score": 3,
+                "text": "Personnalisation systématique et automatisée"
+            }
+        ]
+    },
+    "REL-P4-C3": {
+        "dimension": "Relation Client",
+        "palier": 4,
+        "criterion_text": "Proactivité et innovation dans l’expérience client digitale.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Attente passive des demandes"
+            },
+            {
+                "score": 1,
+                "text": "Réactivité sans anticipation"
+            },
+            {
+                "score": 2,
+                "text": "Actions ponctuelles d’anticipation"
+            },
+            {
+                "score": 3,
+                "text": "Proactivité continue avec offres ou services innovants"
+            }
+        ]
+    },
+    "PROC-P1-C1": {
+        "dimension": "Processus",
+        "palier": 1,
+        "criterion_text": "Identification d’un processus interne à améliorer (flux, tâches, étapes répétitives).",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucun processus repéré"
+            },
+            {
+                "score": 1,
+                "text": "Idée évoquée sans suite"
+            },
+            {
+                "score": 2,
+                "text": "Processus identifié mais non traité"
+            },
+            {
+                "score": 3,
+                "text": "Processus défini comme cible de digitalisation"
+            }
+        ]
+    },
+    "PROC-P1-C2": {
+        "dimension": "Processus",
+        "palier": 1,
+        "criterion_text": "Réalisation de certaines tâches avec des outils numériques (ex. tableurs, scans, apps simples).",
+        "options": [
+            {
+                "score": 0,
+                "text": "Tâches 100 % manuelles"
+            },
+            {
+                "score": 1,
+                "text": "Numérisation ponctuelle ou personnelle"
+            },
+            {
+                "score": 2,
+                "text": "Quelques usages réguliers dans certaines équipes"
+            },
+            {
+                "score": 3,
+                "text": "Usages numériques présents dans le flux opérationnel"
+            }
+        ]
+    },
+    "PROC-P1-C3": {
+        "dimension": "Processus",
+        "palier": 1,
+        "criterion_text": "Suivi manuel ou numérique des tâches ou étapes d’un processus.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucun suivi"
+            },
+            {
+                "score": 1,
+                "text": "Suivi informel ou individuel"
+            },
+            {
+                "score": 2,
+                "text": "Suivi partiel par des outils de base"
+            },
+            {
+                "score": 3,
+                "text": "Suivi organisé et partagé des tâches/processus"
+            }
+        ]
+    },
+    "PROC-P2-C1": {
+        "dimension": "Processus",
+        "palier": 2,
+        "criterion_text": "Digitalisation d’un processus complet (ex. : commande, stock, facturation, RH…).",
+        "options": [
+            {
+                "score": 0,
+                "text": "Processus toujours 100 % papier"
+            },
+            {
+                "score": 1,
+                "text": "Digitalisation partielle ou interrompue"
+            },
+            {
+                "score": 2,
+                "text": "Processus digitalisé mais non optimisé"
+            },
+            {
+                "score": 3,
+                "text": "Processus digitalisé de bout en bout"
+            }
+        ]
+    },
+    "PROC-P2-C2": {
+        "dimension": "Processus",
+        "palier": 2,
+        "criterion_text": "Adaptation des méthodes de travail autour de ces outils digitaux.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Outils utilisés sans changement d’habitude"
+            },
+            {
+                "score": 1,
+                "text": "Usages numériques imposés sans appropriation"
+            },
+            {
+                "score": 2,
+                "text": "Outils intégrés par certaines équipes"
+            },
+            {
+                "score": 3,
+                "text": "Méthodes repensées avec les outils"
+            }
+        ]
+    },
+    "PROC-P2-C3": {
+        "dimension": "Processus",
+        "palier": 2,
+        "criterion_text": "Capacité à tirer des retours sur l’efficacité du processus digitalisé.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucun retour mesuré"
+            },
+            {
+                "score": 1,
+                "text": "Ressenti général non structuré"
+            },
+            {
+                "score": 2,
+                "text": "Feedback ponctuel analysé"
+            },
+            {
+                "score": 3,
+                "text": "Retours réguliers utilisés pour ajustement"
+            }
+        ]
+    },
+    "PROC-P3-C1": {
+        "dimension": "Processus",
+        "palier": 3,
+        "criterion_text": "Intégration claire des outils digitaux dans les flux de travail quotidiens.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Outils encore périphériques"
+            },
+            {
+                "score": 1,
+                "text": "Présents mais non utilisés de façon systématique"
+            },
+            {
+                "score": 2,
+                "text": "Utilisés dans plusieurs services"
+            },
+            {
+                "score": 3,
+                "text": "Complètement intégrés dans l’organisation quotidienne"
+            }
+        ]
+    },
+    "PROC-P3-C2": {
+        "dimension": "Processus",
+        "palier": 3,
+        "criterion_text": "Automatisation partielle de certaines étapes (formulaires, rappels, alertes…).",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucun automatisme"
+            },
+            {
+                "score": 1,
+                "text": "Automatisation isolée ou manuelle"
+            },
+            {
+                "score": 2,
+                "text": "Automatisme en place sur certaines tâches"
+            },
+            {
+                "score": 3,
+                "text": "Automatisme stabilisé et utilisé efficacement"
+            }
+        ]
+    },
+    "PROC-P3-C3": {
+        "dimension": "Processus",
+        "palier": 3,
+        "criterion_text": "Structuration rigoureuse des étapes de travail via des outils (workflow, pipeline, Kanban…).",
+        "options": [
+            {
+                "score": 0,
+                "text": "Flux non formalisés"
+            },
+            {
+                "score": 1,
+                "text": "Schémas ou outils en réflexion"
+            },
+            {
+                "score": 2,
+                "text": "Workflow partially utilisé"
+            },
+            {
+                "score": 3,
+                "text": "Workflow défini, partagé et piloté"
+            }
+        ]
+    },
+    "PROC-P4-C1": {
+        "dimension": "Processus",
+        "palier": 4,
+        "criterion_text": "Fluidité et automatisation avancée des workflows internes.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Tâches toujours manuelles malgré les outils"
+            },
+            {
+                "score": 1,
+                "text": "Automatisation limitée ou ponctuelle"
+            },
+            {
+                "score": 2,
+                "text": "Chaînes semi-automatisées"
+            },
+            {
+                "score": 3,
+                "text": "Automatisations interconnectées et fluides"
+            }
+        ]
+    },
+    "PROC-P4-C2": {
+        "dimension": "Processus",
+        "palier": 4,
+        "criterion_text": "Agilité et capacité à faire évoluer les processus internes en continu.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Processus figés"
+            },
+            {
+                "score": 1,
+                "text": "Ajustements improvisés"
+            },
+            {
+                "score": 2,
+                "text": "Révision des process suite à problèmes"
+            },
+            {
+                "score": 3,
+                "text": "Amélioration continue des processus pilotée par l’équipe"
+            }
+        ]
+    },
+    "PROC-P4-C3": {
+        "dimension": "Processus",
+        "palier": 4,
+        "criterion_text": "Pilotage des indicateurs de performance opérationnelle.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucun indicateur suivi"
+            },
+            {
+                "score": 1,
+                "text": "Indicateurs ponctuellement observés"
+            },
+            {
+                "score": 2,
+                "text": "Suivi de quelques KPIs clés"
+            },
+            {
+                "score": 3,
+                "text": "Indicateurs opérationnels suivis, analysés et exploités"
+            }
+        ]
+    },
+    "TECH-P1-C1": {
+        "dimension": "Technologie",
+        "palier": 1,
+        "criterion_text": "Accès à une connexion Internet fonctionnelle pour l’activité.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucune connexion"
+            },
+            {
+                "score": 1,
+                "text": "Connexion individuelle mais instable ou personnelle"
+            },
+            {
+                "score": 2,
+                "text": "Connexion fiable mais limitée à quelques postes"
+            },
+            {
+                "score": 3,
+                "text": "Connexion stable et accessible à tous"
+            }
+        ]
+    },
+    "TECH-P1-C2": {
+        "dimension": "Technologie",
+        "palier": 1,
+        "criterion_text": "Équipements numériques disponibles (smartphone, PC, tablette, imprimante...).",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucun équipement numérique"
+            },
+            {
+                "score": 1,
+                "text": "Équipements personnels utilisés à titre pro"
+            },
+            {
+                "score": 2,
+                "text": "Quelques équipements disponibles pour certains usages"
+            },
+            {
+                "score": 3,
+                "text": "Équipements adaptés disponibles et fonctionnels"
+            }
+        ]
+    },
+    "TECH-P1-C3": {
+        "dimension": "Technologie",
+        "palier": 1,
+        "criterion_text": "Utilisation d’outils digitaux simples (mail, WhatsApp, Google, scan, bureautique).",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucun usage"
+            },
+            {
+                "score": 1,
+                "text": "Usages individuels non liés aux tâches métier"
+            },
+            {
+                "score": 2,
+                "text": "Usages ponctuels dans certaines tâches"
+            },
+            {
+                "score": 3,
+                "text": "Usages réguliers et intégrés au quotidien"
+            }
+        ]
+    },
+    "TECH-P2-C1": {
+        "dimension": "Technologie",
+        "palier": 2,
+        "criterion_text": "Connectivité adaptée aux besoins collectifs (wifi partagé, réseau interne, cloud).",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucun partage"
+            },
+            {
+                "score": 1,
+                "text": "Partage ponctuel ou non sécurisé"
+            },
+            {
+                "score": 2,
+                "text": "Connexion partagée dans certains espaces"
+            },
+            {
+                "score": 3,
+                "text": "Réseau adapté à l’activité de l’équipe"
+            }
+        ]
+    },
+    "TECH-P2-C2": {
+        "dimension": "Technologie",
+        "palier": 2,
+        "criterion_text": "Outils numériques spécifiques à l’activité métier (ex. caisse, gestion, CRM...).",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucun outil dédié"
+            },
+            {
+                "score": 1,
+                "text": "Outil en test ou limité à une personne"
+            },
+            {
+                "score": 2,
+                "text": "Outil utilisé régulièrement par une équipe"
+            },
+            {
+                "score": 3,
+                "text": "Outil métier structurant intégré aux opérations"
+            }
+        ]
+    },
+    "TECH-P2-C3": {
+        "dimension": "Technologie",
+        "palier": 2,
+        "criterion_text": "Suivi ou maintenance de base des outils et équipements (mises à jour, dépannage).",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucun entretien ou suivi"
+            },
+            {
+                "score": 1,
+                "text": "Interventions au cas par cas"
+            },
+            {
+                "score": 2,
+                "text": "Suivi occasionnel en cas de panne"
+            },
+            {
+                "score": 3,
+                "text": "Maintenance régulière ou prestataire identifié"
+            }
+        ]
+    },
+    "TECH-P3-C1": {
+        "dimension": "Technologie",
+        "palier": 3,
+        "criterion_text": "Intégration régulière de nouveaux outils digitaux adaptés à l’activité.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucun nouvel outil intégré depuis 12 mois"
+            },
+            {
+                "score": 1,
+                "text": "Outils testés mais peu exploités"
+            },
+            {
+                "score": 2,
+                "text": "Outils intégrés dans certaines activités"
+            },
+            {
+                "score": 3,
+                "text": "Intégration continue d’outils pertinents"
+            }
+        ]
+    },
+    "TECH-P3-C2": {
+        "dimension": "Technologie",
+        "palier": 3,
+        "criterion_text": "Infrastructure technique stable et adaptée (réseau, stockage, cloud, applications).",
+        "options": [
+            {
+                "score": 0,
+                "text": "Infrastructure absente ou instable"
+            },
+            {
+                "score": 1,
+                "text": "Infrastructure minimale ou inadaptée"
+            },
+            {
+                "score": 2,
+                "text": "Infrastructure partielle mais en place"
+            },
+            {
+                "score": 3,
+                "text": "Infrastructure stable, fiable et utilisée efficacement"
+            }
+        ]
+    },
+    "TECH-P3-C3": {
+        "dimension": "Technologie",
+        "palier": 3,
+        "criterion_text": "Capacité à faire évoluer les outils ou les équipements techniques.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucun renouvellement envisagé"
+            },
+            {
+                "score": 1,
+                "text": "Évolution réactive en cas de panne"
+            },
+            {
+                "score": 2,
+                "text": "Amélioration planifiée partiellement"
+            },
+            {
+                "score": 3,
+                "text": "Amélioration anticipée et continue du socle technologique"
+            }
+        ]
+    },
+    "TECH-P4-C1": {
+        "dimension": "Technologie",
+        "palier": 4,
+        "criterion_text": "Outils interconnectés entre eux (ex. facturation → compta, formulaire → base clients…).",
+        "options": [
+            {
+                "score": 0,
+                "text": "Outils utilisés séparément"
+            },
+            {
+                "score": 1,
+                "text": "Connexions manuelles ou import/export"
+            },
+            {
+                "score": 2,
+                "text": "Connexions partielles entre outils"
+            },
+            {
+                "score": 3,
+                "text": "Écosystème fluide et automatisé entre outils"
+            }
+        ]
+    },
+    "TECH-P4-C2": {
+        "dimension": "Technologie",
+        "palier": 4,
+        "criterion_text": "Usage avancé des outils pour automatiser ou gagner en efficacité.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Usages de base uniquement"
+            },
+            {
+                "score": 1,
+                "text": "Fonctions avancées non exploitées"
+            },
+            {
+                "score": 2,
+                "text": "Automatisations ponctuelles mises en place"
+            },
+            {
+                "score": 3,
+                "text": "Fonctionnalités avancées utilisées de façon stratégique"
+            }
+        ]
+    },
+    "TECH-P4-C3": {
+        "dimension": "Technologie",
+        "palier": 4,
+        "criterion_text": "Capacité à tester et intégrer de nouvelles solutions ou innovations techniques.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Refus ou peur de la nouveauté"
+            },
+            {
+                "score": 1,
+                "text": "Curiosité mais sans passage à l’action"
+            },
+            {
+                "score": 2,
+                "text": "Tests occasionnels de nouveaux outils"
+            },
+            {
+                "score": 3,
+                "text": "Tests réguliers et intégration pilotée d’innovations"
+            }
+        ]
+    },
+    "SEC-P1-C1": {
+        "dimension": "Sécurité",
+        "palier": 1,
+        "criterion_text": "Conscience des risques numériques et cybersécurité (vols, virus, fuites, piratage…).",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucune conscience"
+            },
+            {
+                "score": 1,
+                "text": "Risques perçus mais non nommés"
+            },
+            {
+                "score": 2,
+                "text": "Risques identifiés de manière basique"
+            },
+            {
+                "score": 3,
+                "text": "Risques clairement reconnus par l’équipe"
+            }
+        ]
+    },
+    "SEC-P1-C2": {
+        "dimension": "Sécurité",
+        "palier": 1,
+        "criterion_text": "Mise en place de premières précautions simples (ex. mot de passe, verrouillage, email pro).",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucune précaution adoptée"
+            },
+            {
+                "score": 1,
+                "text": "Habitudes personnelles non sécurisées"
+            },
+            {
+                "score": 2,
+                "text": "Quelques pratiques mises en place sans cadre"
+            },
+            {
+                "score": 3,
+                "text": "Réflexes individuels actifs et partagés"
+            }
+        ]
+    },
+    "SEC-P1-C3": {
+        "dimension": "Sécurité",
+        "palier": 1,
+        "criterion_text": "Sensibilité à la protection des données personnelles (clients, salariés, partenaires…).",
+        "options": [
+            {
+                "score": 0,
+                "text": "Sujet inconnu ou ignoré"
+            },
+            {
+                "score": 1,
+                "text": "Sensibilisation très partielle"
+            },
+            {
+                "score": 2,
+                "text": "Attention portée à certains types de données"
+            },
+            {
+                "score": 3,
+                "text": "Volonté claire de respecter et protéger les données"
+            }
+        ]
+    },
+    "SEC-P2-C1": {
+        "dimension": "Sécurité",
+        "palier": 2,
+        "criterion_text": "Mise en place de mesures de base (antivirus, sauvegarde, mises à jour).",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucune mesure active"
+            },
+            {
+                "score": 1,
+                "text": "Mesures ponctuelles ou non contrôlées"
+            },
+            {
+                "score": 2,
+                "text": "Mesures en place sur certains équipements"
+            },
+            {
+                "score": 3,
+                "text": "Mesures systématiques sur l’ensemble des outils"
+            }
+        ]
+    },
+    "SEC-P2-C2": {
+        "dimension": "Sécurité",
+        "palier": 2,
+        "criterion_text": "Organisation d’un minimum de plan de sécurité (règles simples, bonnes pratiques, personnes clés).",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucun cadre défini"
+            },
+            {
+                "score": 1,
+                "text": "Quelques conseils diffusés oralement"
+            },
+            {
+                "score": 2,
+                "text": "Recommandations internes ou affichées"
+            },
+            {
+                "score": 3,
+                "text": "Règles établies et connues par tous"
+            }
+        ]
+    },
+    "SEC-P2-C3": {
+        "dimension": "Sécurité",
+        "palier": 2,
+        "criterion_text": "Capacité à réagir à un incident (perte, piratage, attaque…).",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucune réaction envisagée"
+            },
+            {
+                "score": 1,
+                "text": "Réaction improvisée ou instinctive"
+            },
+            {
+                "score": 2,
+                "text": "Réaction organisée sur certains cas"
+            },
+            {
+                "score": 3,
+                "text": "Procédures simples connues et réactives en cas de problème"
+            }
+        ]
+    },
+    "SEC-P3-C1": {
+        "dimension": "Sécurité",
+        "palier": 3,
+        "criterion_text": "Mise en place de pratiques internes de cybersécurité (règles, chartes, formations…).",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucune pratique formalisée"
+            },
+            {
+                "score": 1,
+                "text": "Habitudes individuelles non cadrées"
+            },
+            {
+                "score": 2,
+                "text": "Règles connues mais peu appliquées"
+            },
+            {
+                "score": 3,
+                "text": "Ensemble de pratiques partagées et respectées"
+            }
+        ]
+    },
+    "SEC-P3-C2": {
+        "dimension": "Sécurité",
+        "palier": 3,
+        "criterion_text": "Gestion des accès (droits d’utilisation, comptes, niveaux de confidentialité).",
+        "options": [
+            {
+                "score": 0,
+                "text": "Accès ouverts ou partagés sans contrôle"
+            },
+            {
+                "score": 1,
+                "text": "Quelques restrictions de bon sens"
+            },
+            {
+                "score": 2,
+                "text": "Droits définis sur certains outils"
+            },
+            {
+                "score": 3,
+                "text": "Droits structurés et gérés par rôle ou poste"
+            }
+        ]
+    },
+    "SEC-P3-C3": {
+        "dimension": "Sécurité",
+        "palier": 3,
+        "criterion_text": "Suivi des mises à jour de sécurité et entretien régulier des outils.",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucun suivi"
+            },
+            {
+                "score": 1,
+                "text": "Mises à jour aléatoires ou manuelles"
+            },
+            {
+                "score": 2,
+                "text": "Suivi partiel et réactif"
+            },
+            {
+                "score": 3,
+                "text": "Mises à jour régulières automatisées ou planifiées"
+            }
+        ]
+    },
+    "SEC-P4-C1": {
+        "dimension": "Sécurité",
+        "palier": 4,
+        "criterion_text": "Intégration d’une culture de sécurité continue (habitudes, échanges, responsabilité collective).",
+        "options": [
+            {
+                "score": 0,
+                "text": "Sujet ignoré dans l’organisation"
+            },
+            {
+                "score": 1,
+                "text": "Conscience partielle"
+            },
+            {
+                "score": 2,
+                "text": "Culture présente dans certains services"
+            },
+            {
+                "score": 3,
+                "text": "Sensibilisation intégrée à l’ensemble de l’entreprise"
+            }
+        ]
+    },
+    "SEC-P4-C2": {
+        "dimension": "Sécurité",
+        "palier": 4,
+        "criterion_text": "Mise en conformité avec les bonnes pratiques (ex. RGPD, obligations clients, audits internes).",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucune conformité visée"
+            },
+            {
+                "score": 1,
+                "text": "Intention ou documentation incomplète"
+            },
+            {
+                "score": 2,
+                "text": "Mise en conformité partielle ou en cours"
+            },
+            {
+                "score": 3,
+                "text": "Conformité documentée et suivie"
+            }
+        ]
+    },
+    "SEC-P4-C3": {
+        "dimension": "Sécurité",
+        "palier": 4,
+        "criterion_text": "Capacité à anticiper les nouvelles menaces et intégrer des solutions innovantes (cyberscan, MFA, etc.).",
+        "options": [
+            {
+                "score": 0,
+                "text": "Aucune veille"
+            },
+            {
+                "score": 1,
+                "text": "Réactions uniquement en cas de crise"
+            },
+            {
+                "score": 2,
+                "text": "Veille ou innovation ponctuelle"
+            },
+            {
+                "score": 3,
+                "text": "Anticipation active et recherche continue de solutions"
+            }
+        ]
+    }
+}
