@@ -20,7 +20,7 @@ const allowedOrigins = [
 
   // Vercel - Main domain and preview deployments
   'https://front-digiassistant.vercel.app',
-  'https://front-digiassistant.vercel.app/',
+  'https://front-digiassistant.3gittkm4-happyshop120-1488s-projects.vercel.app',
   // Vercel preview deployments (wildcard pattern)
   /^https:\/\/front-digiassistant.*\.vercel\.app$/,
 ];
@@ -41,24 +41,24 @@ app.use((req, res, next) => {
 const corsOptions = {
   origin: (origin, callback) => {
     console.log(`🔍 CORS Check - Origin received: "${origin}"`);
-    
+
     // Allow requests with no origin (like mobile apps or curl requests)
     if (!origin) {
       console.log('✅ Allowing request with no origin');
       return callback(null, true);
     }
-    
+
     // Check against string origins
     const normalizedOrigin = origin.endsWith('/') ? origin.slice(0, -1) : origin;
     const stringOrigins = allowedOrigins.filter(o => typeof o === 'string');
     const normalizedAllowed = stringOrigins.map(o => o.endsWith('/') ? o.slice(0, -1) : o);
-    
+
     // Check if origin matches any string origin
     if (normalizedAllowed.includes(normalizedOrigin)) {
       console.log(`✅ Origin allowed: ${origin}`);
       return callback(null, true);
     }
-    
+
     // Check against regex patterns (for Vercel preview deployments)
     const regexOrigins = allowedOrigins.filter(o => o instanceof RegExp);
     for (const regex of regexOrigins) {
@@ -67,7 +67,7 @@ const corsOptions = {
         return callback(null, true);
       }
     }
-    
+
     console.warn(`⚠️ Blocked origin: ${origin}`);
     console.warn(`   Normalized: ${normalizedOrigin}`);
     console.warn(`   Allowed origins:`, normalizedAllowed);
@@ -82,7 +82,7 @@ const corsOptions = {
 };
 
 // Apply CORS middleware
-app.use(cors(corsOptions)); 
+app.use(cors(corsOptions));
 
 // --- End CORS Fix ---
 app.use(express.json());
@@ -103,7 +103,7 @@ app.use((err, req, res, next) => {
   if (err.stack) {
     console.error(`   Stack: ${err.stack.split('\n').slice(0, 5).join('\n')}`);
   }
-  
+
   // Ensure CORS headers are set even on error responses
   const origin = req.headers.origin;
   if (origin) {
@@ -112,10 +112,10 @@ app.use((err, req, res, next) => {
     const stringOrigins = allowedOrigins.filter(o => typeof o === 'string');
     const normalizedAllowed = stringOrigins.map(o => o.endsWith('/') ? o.slice(0, -1) : o);
     const regexOrigins = allowedOrigins.filter(o => o instanceof RegExp);
-    
-    const isAllowed = normalizedAllowed.includes(normalizedOrigin) || 
-                     regexOrigins.some(regex => regex.test(origin));
-    
+
+    const isAllowed = normalizedAllowed.includes(normalizedOrigin) ||
+      regexOrigins.some(regex => regex.test(origin));
+
     if (isAllowed) {
       res.header('Access-Control-Allow-Origin', origin);
       res.header('Access-Control-Allow-Credentials', 'true');
@@ -123,7 +123,7 @@ app.use((err, req, res, next) => {
       res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With');
     }
   }
-  
+
   if (err.message === 'Not allowed by CORS') {
     return res.status(403).json({ error: 'CORS policy violation' });
   }
