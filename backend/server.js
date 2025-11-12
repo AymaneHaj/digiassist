@@ -18,13 +18,11 @@ const allowedOrigins = [
   'http://127.0.0.1:5173',
   'http://127.0.0.1:3000',
 
-  // Vercel (with and without trailing slash)
+  // Vercel - Main domain and preview deployments
   'https://front-digiassistant.vercel.app',
   'https://front-digiassistant.vercel.app/',
-  'https://front-digiassistant.3gittkm4-happyshop120-1488s-projects.vercel.app',
-  'https://front-digiassistant.3gittkm4-happyshop120-1488s-projects.vercel.app/',
-  'https://front-digiassistant-3gitktom4-happyshop120-1488s-projects.vercel.app',
-  'https://front-digiassistant-3gitktom4-happyshop120-1488s-projects.vercel.app/'
+  // Vercel preview deployments (wildcard pattern)
+  /^https:\/\/front-digiassistant.*\.vercel\.app$/,
 ];
 
 console.log('🌐 CORS Configuration:');
@@ -50,36 +48,40 @@ const corsOptions = {
       return callback(null, true);
     }
     
-    // Normalize origin (remove trailing slash for comparison)
+    // Check against string origins
     const normalizedOrigin = origin.endsWith('/') ? origin.slice(0, -1) : origin;
-    const normalizedAllowed = allowedOrigins.map(o => o.endsWith('/') ? o.slice(0, -1) : o);
+    const stringOrigins = allowedOrigins.filter(o => typeof o === 'string');
+    const normalizedAllowed = stringOrigins.map(o => o.endsWith('/') ? o.slice(0, -1) : o);
     
+    // Check if origin matches any string origin
     if (normalizedAllowed.includes(normalizedOrigin)) {
       console.log(`✅ Origin allowed: ${origin}`);
-      callback(null, true);
-    } else {
-      console.warn(`⚠️ Blocked origin: ${origin}`);
-      console.warn(`   Normalized: ${normalizedOrigin}`);
-      console.warn(`   Allowed origins:`, normalizedAllowed);
-      callback(new Error('Not allowed by CORS'));
+      return callback(null, true);
     }
+    
+    // Check against regex patterns (for Vercel preview deployments)
+    const regexOrigins = allowedOrigins.filter(o => o instanceof RegExp);
+    for (const regex of regexOrigins) {
+      if (regex.test(origin)) {
+        console.log(`✅ Origin allowed by regex: ${origin}`);
+        return callback(null, true);
+      }
+    }
+    
+    console.warn(`⚠️ Blocked origin: ${origin}`);
+    console.warn(`   Normalized: ${normalizedOrigin}`);
+    console.warn(`   Allowed origins:`, normalizedAllowed);
+    callback(new Error('Not allowed by CORS'));
   },
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+  exposedHeaders: ['Authorization'],
   preflightContinue: false,
-  optionsSuccessStatus: 200
+  optionsSuccessStatus: 204
 };
 
-// Handle OPTIONS requests explicitly
-app.options('*', (req, res) => {
-  console.log('🔧 Handling OPTIONS preflight request');
-  console.log(`   Origin: ${req.headers.origin}`);
-  cors(corsOptions)(req, res, () => {
-    res.status(200).end();
-  });
-});
-
+// Apply CORS middleware
 app.use(cors(corsOptions)); 
 
 // --- End CORS Fix ---
@@ -100,6 +102,26 @@ app.use((err, req, res, next) => {
   console.error(`   Error: ${err.message}`);
   if (err.stack) {
     console.error(`   Stack: ${err.stack.split('\n').slice(0, 5).join('\n')}`);
+  }
+  
+  // Ensure CORS headers are set even on error responses
+  const origin = req.headers.origin;
+  if (origin) {
+    // Check if origin is allowed (same logic as CORS middleware)
+    const normalizedOrigin = origin.endsWith('/') ? origin.slice(0, -1) : origin;
+    const stringOrigins = allowedOrigins.filter(o => typeof o === 'string');
+    const normalizedAllowed = stringOrigins.map(o => o.endsWith('/') ? o.slice(0, -1) : o);
+    const regexOrigins = allowedOrigins.filter(o => o instanceof RegExp);
+    
+    const isAllowed = normalizedAllowed.includes(normalizedOrigin) || 
+                     regexOrigins.some(regex => regex.test(origin));
+    
+    if (isAllowed) {
+      res.header('Access-Control-Allow-Origin', origin);
+      res.header('Access-Control-Allow-Credentials', 'true');
+      res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS, PATCH');
+      res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With');
+    }
   }
   
   if (err.message === 'Not allowed by CORS') {
