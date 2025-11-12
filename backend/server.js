@@ -28,15 +28,6 @@ const allowedOrigins = [
 console.log('🌐 CORS Configuration:');
 console.log('   Allowed origins:', allowedOrigins);
 
-// Request logging middleware
-app.use((req, res, next) => {
-  const timestamp = new Date().toISOString();
-  console.log(`\n📥 [${timestamp}] ${req.method} ${req.path}`);
-  console.log(`   Origin: ${req.headers.origin || 'No origin'}`);
-  console.log(`   User-Agent: ${req.headers['user-agent']?.substring(0, 50) || 'N/A'}`);
-  next();
-});
-
 // CORS configuration with dynamic origin checking
 const corsOptions = {
   origin: (origin, callback) => {
@@ -78,14 +69,23 @@ const corsOptions = {
   allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
   exposedHeaders: ['Authorization'],
   preflightContinue: false,
-  optionsSuccessStatus: 204
+  optionsSuccessStatus: 200
 };
 
-// Apply CORS middleware
+// 🔴 CRITICAL: Apply CORS middleware FIRST, before any other middleware
 app.use(cors(corsOptions));
 
-// --- End CORS Fix ---
+// Apply JSON parser
 app.use(express.json());
+
+// Request logging middleware (AFTER CORS so CORS headers are set first)
+app.use((req, res, next) => {
+  const timestamp = new Date().toISOString();
+  console.log(`\n📥 [${timestamp}] ${req.method} ${req.path}`);
+  console.log(`   Origin: ${req.headers.origin || 'No origin'}`);
+  console.log(`   User-Agent: ${req.headers['user-agent']?.substring(0, 50) || 'N/A'}`);
+  next();
+});
 
 app.get('/', (req, res) => {
   res.send('DigiAssistant Backend (Node.js v2 - Mongoose) is running!');
@@ -113,26 +113,8 @@ app.use((err, req, res, next) => {
     console.error(`   Stack: ${err.stack.split('\n').slice(0, 5).join('\n')}`);
   }
 
-  // Ensure CORS headers are set even on error responses
-  const origin = req.headers.origin;
-  if (origin) {
-    // Check if origin is allowed (same logic as CORS middleware)
-    const normalizedOrigin = origin.endsWith('/') ? origin.slice(0, -1) : origin;
-    const stringOrigins = allowedOrigins.filter(o => typeof o === 'string');
-    const normalizedAllowed = stringOrigins.map(o => o.endsWith('/') ? o.slice(0, -1) : o);
-    const regexOrigins = allowedOrigins.filter(o => o instanceof RegExp);
-
-    const isAllowed = normalizedAllowed.includes(normalizedOrigin) ||
-      regexOrigins.some(regex => regex.test(origin));
-
-    if (isAllowed) {
-      res.header('Access-Control-Allow-Origin', origin);
-      res.header('Access-Control-Allow-Credentials', 'true');
-      res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS, PATCH');
-      res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With');
-    }
-  }
-
+  // CORS headers are automatically set by cors middleware, no need to duplicate
+  
   if (err.message === 'Not allowed by CORS') {
     return res.status(403).json({ error: 'CORS policy violation' });
   }
