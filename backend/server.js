@@ -106,23 +106,23 @@ app.use((err, req, res, next) => {
 
   // Ensure CORS headers are set even on error responses
   const origin = req.headers.origin;
-  if (origin) {
-    // Check if origin is allowed (same logic as CORS middleware)
-    const normalizedOrigin = origin.endsWith('/') ? origin.slice(0, -1) : origin;
-    const stringOrigins = allowedOrigins.filter(o => typeof o === 'string');
-    const normalizedAllowed = stringOrigins.map(o => o.endsWith('/') ? o.slice(0, -1) : o);
-    const regexOrigins = allowedOrigins.filter(o => o instanceof RegExp);
 
-    const isAllowed = normalizedAllowed.includes(normalizedOrigin) ||
-      regexOrigins.some(regex => regex.test(origin));
+  // Check if origin is allowed (same logic as CORS middleware)
+  const normalizedOrigin = origin.endsWith('/') ? origin.slice(0, -1) : origin;
+  const stringOrigins = allowedOrigins.filter(o => typeof o === 'string');
+  const normalizedAllowed = stringOrigins.map(o => o.endsWith('/') ? o.slice(0, -1) : o);
+  const regexOrigins = allowedOrigins.filter(o => o instanceof RegExp);
 
-    if (isAllowed) {
-      res.header('Access-Control-Allow-Origin', origin);
-      res.header('Access-Control-Allow-Credentials', 'true');
-      res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS, PATCH');
-      res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With');
-    }
+  const isAllowed = normalizedAllowed.includes(normalizedOrigin) ||
+    regexOrigins.some(regex => regex.test(origin));
+
+  if (isAllowed) {
+    res.header('Access-Control-Allow-Origin', origin);
+    res.header('Access-Control-Allow-Credentials', 'true');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS, PATCH');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With');
   }
+
 
   if (err.message === 'Not allowed by CORS') {
     return res.status(403).json({ error: 'CORS policy violation' });
