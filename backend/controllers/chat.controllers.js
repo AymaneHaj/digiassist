@@ -2,10 +2,8 @@
 import axios from 'axios';
 import 'dotenv/config';
 import { Conversation } from '../models/Conversation.js';
+import diagnosticGrid from '../data/diagnostic_grid.json' with { type: 'json' };
 
-import { createRequire } from 'module';
-const require = createRequire(import.meta.url);
-const diagnosticGrid = require('../data/diagnostic_grid.json');
 
 const AI_AGENT_URL = process.env.AI_AGENT_URL || 'http://localhost:8000';
 const ALL_CRITERIA_IDS = Object.keys(diagnosticGrid);
@@ -433,6 +431,9 @@ export const handleChat = async (req, res) => {
     let didSkip = false;
 
     // Are we at the last Palier 1 criterion? (index 2, 14, 26, ...)
+    // DISABLED: Adaptive skip feature to allow full diagnostic
+    // Users will always complete all 72 questions for comprehensive assessment
+    /*
     if (currentCriterion.id.endsWith("P1-C3")) {
       // Based on Palier 1 scores
       const palier1History = conversation.history.slice(-3); // آخر 3 أجوبة (C1, C2, C3)
@@ -451,6 +452,7 @@ export const handleChat = async (req, res) => {
         }
       }
     }
+    */
 
     // --- Step 4: Are we done with the diagnostic? ---
     if (final_next_index >= ALL_CRITERIA_IDS.length) {
@@ -460,7 +462,7 @@ export const handleChat = async (req, res) => {
       await conversation.save(); // save changes in DB
       return res.json({
         conversation_id,
-        ai_question: `${evaluationResult.ai_reaction} Thank you! We have completed the diagnostic. We will now prepare your report.`, // ترجمة
+        ai_question: `${evaluationResult.ai_reaction} merci pour votre réponse. Nous avons terminé le diagnostic. Nous allons maintenant préparer votre rapport.`,
         current_criterion_id: "FINISHED"
       });
     }
@@ -501,7 +503,7 @@ export const handleChat = async (req, res) => {
 
     let fullAiResponse = `${evaluationResult.ai_reaction} ${final_ai_question_text}`;
     if (didSkip) {
-      fullAiResponse = `${evaluationResult.ai_reaction} Okay, based on your previous answers, let's skip ahead to the next main topic. ${final_ai_question_text}`; // phrasing
+      fullAiResponse = `${evaluationResult.ai_reaction} d'après vos réponses précédentes, passons à la prochaine dimension. ${final_ai_question_text}`; // phrasing
     }
 
     return res.json({

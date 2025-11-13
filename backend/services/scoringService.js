@@ -1,6 +1,4 @@
-import { createRequire } from 'module';
-const require = createRequire(import.meta.url);
-const diagnosticGrid = require('../data/diagnostic_grid.json');
+import diagnosticGrid from '../data/diagnostic_grid.json' with { type: 'json' };
 
 const PROFILING_RULES = {
     "Débutant": { min: 0, max: 25, level: 1 },
@@ -36,10 +34,12 @@ export function calculateDiagnosticResults(scores) {
 
     const dimensionResults = {};
     let totalGlobalScore = 0;
+    const MAX_SCORE_PER_DIMENSION = 36; 
+    const DIMENSION_COUNT = 6;
 
     for (const dimName of Object.keys(dimensionScores)) {
         const totalDimScore = dimensionScores[dimName].reduce((sum, val) => sum + val, 0);
-        const scorePercent = (totalDimScore / 36) * 100;
+        const scorePercent = (totalDimScore / MAX_SCORE_PER_DIMENSION) * 100;
         dimensionResults[dimName] = {
             score_brut: totalDimScore,
             score_percent: Math.round(scorePercent * 100) / 100,
@@ -48,7 +48,7 @@ export function calculateDiagnosticResults(scores) {
         totalGlobalScore += scorePercent;
     }
 
-    const global_score = Math.round((totalGlobalScore / 6) * 100) / 100;
+    const global_score = Math.round((totalGlobalScore / DIMENSION_COUNT) * 100) / 100;
 
     let profile_info = { profile_name: "Indéfini", profile_level: 0 };
     if (global_score >= PROFILING_RULES["Leader"].min) {
@@ -67,10 +67,14 @@ export function calculateDiagnosticResults(scores) {
     for (const [dimName, result] of Object.entries(dimensionResults)) {
         let achieved_level = 0;
         const PALIER_THRESHOLD = 4;
-        if (result.paliers[1] > PALIER_THRESHOLD) {achieved_level = 1;
-            if (result.paliers[2] > PALIER_THRESHOLD) {achieved_level = 2;
-                if (result.paliers[3] > PALIER_THRESHOLD) {achieved_level = 3;
-                    if (result.paliers[4] > PALIER_THRESHOLD) {achieved_level = 4;
+        if (result.paliers[1] > PALIER_THRESHOLD) {
+            achieved_level = 1;
+            if (result.paliers[2] > PALIER_THRESHOLD) {
+                achieved_level = 2;
+                if (result.paliers[3] > PALIER_THRESHOLD) {
+                    achieved_level = 3;
+                    if (result.paliers[4] > PALIER_THRESHOLD) {
+                        achieved_level = 4;
                     }
                 }
             }

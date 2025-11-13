@@ -24,8 +24,24 @@ async def handle_evaluate_react(request: EvaluateReactRequest): # Use NEW reques
         result = await evaluate_and_react(request.user_answer, request.current_criterion)
         return EvaluateReactResponse(**result) # Return NEW response model
     except Exception as e:
-        print(f"Error in /evaluate_react endpoint: {e}")
-        raise HTTPException(status_code=500, detail=f"AI Agent Error during evaluation: {e}")
+        error_str = str(e)
+        print(f"❌ Error in /evaluate_react endpoint: {error_str}")
+        
+        # Provide more helpful error messages
+        if "Unauthorized" in error_str or "api_key" in error_str.lower():
+            status_code = 401
+            detail = "API key is invalid or not configured. Check OPENAI_API_KEY environment variable."
+        elif "rate limit" in error_str.lower():
+            status_code = 429
+            detail = "Rate limit exceeded. Please try again later."
+        elif "model" in error_str.lower():
+            status_code = 400
+            detail = f"Model not found or not available. Check OPENAI_MODEL setting."
+        else:
+            status_code = 500
+            detail = f"AI Agent Error during evaluation: {e}"
+        
+        raise HTTPException(status_code=status_code, detail=detail)
 
 # --- Endpoint 2: Formulate Question ---
 @app.post("/api/v1/formulate_question", response_model=FormulateQuestionResponse) # Use NEW endpoint path and model
@@ -38,10 +54,38 @@ async def handle_formulate_question(request: FormulateQuestionRequest): # Use NE
         formulated_q = await formulate_question(request.criterion_text, request.is_first_question)
         return FormulateQuestionResponse(formulated_question=formulated_q) # Return NEW response model
     except Exception as e:
-        print(f"Error in /formulate_question endpoint: {e}")
-        raise HTTPException(status_code=500, detail=f"AI Agent Error during formulation: {e}")
+        error_str = str(e)
+        print(f"❌ Error in /formulate_question endpoint: {error_str}")
+        
+        # Provide more helpful error messages
+        if "Unauthorized" in error_str or "api_key" in error_str.lower():
+            status_code = 401
+            detail = "API key is invalid or not configured. Check OPENAI_API_KEY environment variable."
+        elif "rate limit" in error_str.lower():
+            status_code = 429
+            detail = "Rate limit exceeded. Please try again later."
+        elif "model" in error_str.lower():
+            status_code = 400
+            detail = f"Model not found or not available. Check OPENAI_MODEL setting."
+        else:
+            status_code = 500
+            detail = f"AI Agent Error during formulation: {e}"
+        
+        raise HTTPException(status_code=status_code, detail=detail)
 
 @app.get("/")
 def read_root():
     return {"Welcome": "DigiAssistant AI Agent (Tool-Based - OpenAI GPT-4o) is running!"} # Updated welcome
+
+@app.get("/health")
+def health_check():
+    """Health check endpoint for Railway"""
+    from config import settings
+    return {
+        "status": "healthy",
+        "service": "DigiAssistant AI Agent",
+        "model": settings.OPENAI_MODEL,
+        "base_url": settings.OPENAI_BASE_URL,
+        "api_key_configured": "Yes" if settings.OPENAI_API_KEY else "No"
+    }
 
