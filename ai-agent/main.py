@@ -1,16 +1,50 @@
+import sys
+import os
+from contextlib import asynccontextmanager
 from fastapi import FastAPI, HTTPException
-from models import (
-    EvaluateReactRequest, EvaluateReactResponse,      # Import NEW models
-    FormulateQuestionRequest, FormulateQuestionResponse # Import NEW models
-)
-from services import (
-    evaluate_and_react, formulate_question           # Import NEW services
-)
+
+# Add current directory to path to ensure imports work
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+try:
+    from models import (
+        EvaluateReactRequest, EvaluateReactResponse,      # Import NEW models
+        FormulateQuestionRequest, FormulateQuestionResponse # Import NEW models
+    )
+    from services import (
+        evaluate_and_react, formulate_question           # Import NEW services
+    )
+except ImportError as e:
+    print(f"❌ FATAL: Failed to import modules: {e}")
+    print(f"Current directory: {os.getcwd()}")
+    print(f"Python path: {sys.path}")
+    raise
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Startup and shutdown events"""
+    # Startup
+    try:
+        from config import settings
+        print(f"✅ App starting up...")
+        print(f"   Current directory: {os.getcwd()}")
+        print(f"   Model: {settings.OPENAI_MODEL}")
+        print(f"   Base URL: {settings.OPENAI_BASE_URL}")
+        print(f"   API Key configured: {'Yes' if settings.OPENAI_API_KEY else 'No'}")
+        print(f"   Port: {os.getenv('PORT', 'Not set')}")
+    except Exception as e:
+        print(f"❌ Startup error: {e}")
+        import traceback
+        traceback.print_exc()
+    yield
+    # Shutdown (if needed)
+    print("🛑 App shutting down...")
 
 app = FastAPI(
     title="DigiAssistant AI Agent (Stateless)",
     description="A pure AI service that generates questions and evaluations for the diagnostic using OpenAI GPT-4o.",
-    version="2.0.0"
+    version="2.0.0",
+    lifespan=lifespan
 )
 
 # --- Endpoint 1: Evaluate & React ---
@@ -80,12 +114,19 @@ def read_root():
 @app.get("/health")
 def health_check():
     """Health check endpoint for Railway"""
-    from config import settings
-    return {
-        "status": "healthy",
-        "service": "DigiAssistant AI Agent",
-        "model": settings.OPENAI_MODEL,
-        "base_url": settings.OPENAI_BASE_URL,
-        "api_key_configured": "Yes" if settings.OPENAI_API_KEY else "No"
-    }
+    try:
+        from config import settings
+        return {
+            "status": "healthy",
+            "service": "DigiAssistant AI Agent",
+            "model": settings.OPENAI_MODEL or "Not configured",
+            "base_url": settings.OPENAI_BASE_URL or "Not configured",
+            "api_key_configured": "Yes" if settings.OPENAI_API_KEY else "No",
+            "port": os.getenv("PORT", "Not set")
+        }
+    except Exception as e:
+        return {
+            "status": "error",
+            "error": str(e)
+        }
 
