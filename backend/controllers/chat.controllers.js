@@ -426,6 +426,36 @@ export const handleChat = async (req, res) => {
       conversation.history.push(historyEntry);
     }
 
+    // --- Update User's total score ---
+    try {
+      const { User } = await import('../models/User.js');
+      const user = await User.findById(req.user.id);
+      if (user) {
+        // Calculate total score from all conversations
+        const allConversations = await Conversation.find({ UserId: req.user.id });
+        let totalScore = 0;
+        let answeredQuestions = 0;
+        
+        allConversations.forEach(conv => {
+          if (conv.history) {
+            conv.history.forEach(entry => {
+              if (entry.evaluation && entry.user_answer && entry.user_answer !== '__PENDING__') {
+                totalScore += entry.evaluation.score || 0;
+                answeredQuestions += 1;
+              }
+            });
+          }
+        });
+        
+        user.total_score = totalScore;
+        user.answered_questions = answeredQuestions;
+        await user.save();
+      }
+    } catch (scoreError) {
+      console.error('[Node Backend] Error updating user score:', scoreError);
+      // Don't fail the request if score update fails
+    }
+
     // --- Step 3: Determine the next index (with Adaptive Skip) ---
     let final_next_index = currentIndex + 1; // الحالة العادية
     let didSkip = false;

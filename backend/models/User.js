@@ -49,6 +49,14 @@ const UserSchema = new mongoose.Schema({
             'Très grande (201+ employés)'
         ],
     },
+    total_score: {
+        type: Number,
+        default: 0,
+    },
+    answered_questions: {
+        type: Number,
+        default: 0,
+    },
 }, { timestamps: true });
 
 

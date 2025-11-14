@@ -65,7 +65,9 @@ export const register = async (req, res) => {
                 email: user.email,
                 company_name: user.company_name,
                 sector: user.sector,
-                company_size: user.company_size
+                company_size: user.company_size,
+                total_score: user.total_score || 0,
+                answered_questions: user.answered_questions || 0
             },
             token
         });
@@ -105,7 +107,13 @@ export const login = async (req, res) => {
 
         res.json({
             message: 'Login successful',
-            user: { id: user._id, email: user.email },
+            user: { 
+                id: user._id, 
+                email: user.email,
+                company_name: user.company_name,
+                total_score: user.total_score || 0,
+                answered_questions: user.answered_questions || 0
+            },
             token
         });
     } catch (error) {
@@ -120,7 +128,15 @@ export const getCurrentUser = async (req, res) => {
         if (!user) {
             return res.status(404).json({ error: 'User not found' });
         }
-        res.json(user);
+        res.json({
+            id: user._id,
+            email: user.email,
+            company_name: user.company_name,
+            sector: user.sector,
+            company_size: user.company_size,
+            total_score: user.total_score || 0,
+            answered_questions: user.answered_questions || 0
+        });
     } catch (error) {
         console.error('Get current user error:', error);
         res.status(500).json({ error: 'Failed to get user data' });
