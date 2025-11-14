@@ -47,11 +47,19 @@ export const getActiveConversation = async (req, res) => {
     return res.status(401).json({ detail: "User authentication required." });
   }
 
+  console.log(`[getActiveConversation] Looking for active conversation for user: ${req.user.id}`);
+
   try {
     const conversation = await Conversation.findOne({
       UserId: req.user.id,
       status: 'in_progress' 
-    }).sort({ updatedAt: -1 }); 
+    }).sort({ updatedAt: -1 });
+    
+    if (conversation) {
+      console.log(`[getActiveConversation] Found conversation: ${conversation.conversation_id} for user: ${req.user.id}`);
+    } else {
+      console.log(`[getActiveConversation] No active conversation found for user: ${req.user.id}`);
+    } 
 
     if (!conversation) {
       return res.status(404).json({ detail: "No active conversation found." });
@@ -301,11 +309,12 @@ export const handleChat = async (req, res) => {
   }
 
   try {
+    console.log(`[handleChat] Processing request for conversation: ${conversation_id}, user: ${req.user.id}`);
     let conversation = await Conversation.findOne({ conversation_id: conversation_id, UserId: req.user.id });
 
     // --- Case 1: New Conversation ---
     if (!conversation) {
-      console.log(`[Node Backend] New conversation: ${conversation_id}`);
+      console.log(`[Node Backend] New conversation: ${conversation_id} for user: ${req.user.id}`);
       const firstCriterionId = ALL_CRITERIA_IDS[0];
       const firstCriterion = getCriterionById(firstCriterionId);
 
