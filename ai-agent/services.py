@@ -27,7 +27,7 @@ def get_client():
     
 
 async def evaluate_and_react(user_answer: str, current_criterion: Dict[str, Any]) -> Dict[str, Any]:
-    """Evaluates user answer and provides a reaction using OpenAI GPT-4o."""
+    """Evaluates user answer and provides a reaction using OpenAI."""
 
     options_str = "\n".join([f"- Score {opt['score']}: {opt['text']}" for opt in current_criterion.get("options", [])])
     current_id = current_criterion.get("id", "N/A")
@@ -40,7 +40,13 @@ async def evaluate_and_react(user_answer: str, current_criterion: Dict[str, Any]
     - Options:
     {options_str}
     ---
-    Now, perform the evaluation and reaction tasks and return ONLY the JSON object specified in the system prompt.
+    **IMPORTANT EVALUATION INSTRUCTIONS:**
+    1.  First, check if the answer is meaningful and relevant.
+    2.  If the answer is nonsensical, random text, gibberish (like "hhshjsa", "abcde"), unrelated, or shows no understanding, you **MUST assign score 0**.
+    3.  Only assign scores 1, 2, or 3 if the answer is relevant and demonstrates a genuine attempt to answer the question.
+    4.  Be strict and conservative. When in doubt, choose the lower score.
+    
+    Now, perform the evaluation and reaction tasks based on these strict rules and return ONLY the JSON object.
     """
 
     api_client = get_client()
@@ -51,7 +57,7 @@ async def evaluate_and_react(user_answer: str, current_criterion: Dict[str, Any]
             {"role": "user", "content": user_prompt}
         ],
         response_format={"type": "json_object"},
-        temperature=0.7
+        temperature=0.2 
     )
     
     result_text = response.choices[0].message.content
@@ -65,7 +71,7 @@ async def evaluate_and_react(user_answer: str, current_criterion: Dict[str, Any]
 
 
 async def formulate_question(criterion_text: str, is_first_question: bool = False) -> str:
-    """Generates a conversational question using OpenAI GPT-4o."""
+    """Generates a conversational question using OpenAI."""
 
     if is_first_question:
         # For the first question, include a welcome message
@@ -102,6 +108,6 @@ Return ONLY the question in FRENCH (Français).
             {"role": "system", "content": SYSTEM_PROMPT_FORMULATE_QUESTION},
             {"role": "user", "content": user_prompt}
         ],
-        temperature=0.7
+        temperature=0.7 # Keep 0.7 for creative question formulation
     )
     return response.choices[0].message.content.strip()
