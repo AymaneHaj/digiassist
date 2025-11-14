@@ -4,15 +4,26 @@ from typing import Dict, Any
 from config import settings 
 from prompts import SYSTEM_PROMPT_EVALUATE_REACT, SYSTEM_PROMPT_FORMULATE_QUESTION
 
-try:
-    # Use GitHub Models API if OPENAI_BASE_URL is set in .env
-    client = AsyncOpenAI(
-        api_key=settings.OPENAI_API_KEY,
-        base_url=settings.OPENAI_BASE_URL
-    )
-    print(f"API Configured Successfully. Base URL: {settings.OPENAI_BASE_URL}, Model: {settings.OPENAI_MODEL}")
-except Exception as config_error:
-    print(f"FATAL ERROR configuring API: {config_error}")
+# Initialize client lazily to avoid startup errors
+client = None
+
+def get_client():
+    """Get or create the OpenAI client instance."""
+    global client
+    if client is None:
+        if not settings.OPENAI_API_KEY:
+            raise ValueError("OPENAI_API_KEY environment variable is not set")
+        if not settings.OPENAI_BASE_URL:
+            raise ValueError("OPENAI_BASE_URL environment variable is not set")
+        if not settings.OPENAI_MODEL:
+            raise ValueError("OPENAI_MODEL environment variable is not set")
+        
+        client = AsyncOpenAI(
+            api_key=settings.OPENAI_API_KEY,
+            base_url=settings.OPENAI_BASE_URL
+        )
+        print(f"API Configured Successfully. Base URL: {settings.OPENAI_BASE_URL}, Model: {settings.OPENAI_MODEL}")
+    return client
     
 
 async def evaluate_and_react(user_answer: str, current_criterion: Dict[str, Any]) -> Dict[str, Any]:
@@ -32,7 +43,8 @@ async def evaluate_and_react(user_answer: str, current_criterion: Dict[str, Any]
     Now, perform the evaluation and reaction tasks and return ONLY the JSON object specified in the system prompt.
     """
 
-    response = await client.chat.completions.create(
+    api_client = get_client()
+    response = await api_client.chat.completions.create(
         model=settings.OPENAI_MODEL,
         messages=[
             {"role": "system", "content": SYSTEM_PROMPT_EVALUATE_REACT},
@@ -83,7 +95,8 @@ Return ONLY the question in FRENCH (Français).
 - NO extra text
 - Just the question itself, friendly and concise."""
 
-    response = await client.chat.completions.create(
+    api_client = get_client()
+    response = await api_client.chat.completions.create(
         model=settings.OPENAI_MODEL,
         messages=[
             {"role": "system", "content": SYSTEM_PROMPT_FORMULATE_QUESTION},
